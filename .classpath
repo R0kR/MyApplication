@@ -2,8 +2,8 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry exported="true" kind="lib" path="JAR/bson-3.0.2.jar"/>
-	<classpathentry exported="true" kind="lib" path="JAR/mongodb-driver-3.0.2.jar"/>
-	<classpathentry exported="true" kind="lib" path="JAR/mongodb-driver-core-3.0.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="JAR/mongodb-driver-3.6.3.jar"/>
+	<classpathentry exported="true" kind="lib" path="JAR/mongodb-driver-core-3.6.3.jar"/>
+	<classpathentry exported="true" kind="lib" path="JAR/bson-3.6.3.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

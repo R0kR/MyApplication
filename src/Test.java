@@ -1,4 +1,5 @@
 import com.mongodb.MongoClient;
+import com.mongodb.MongoClientURI;
 import com.mongodb.MongoCredential;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
@@ -9,23 +10,20 @@ public class Test {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
         System.out.println("Hi Team! Let's start the mission guys");
+        MongoClientURI uri = new MongoClientURI("mongodb://test:test@ds217349.mlab.com:17349/mymongodb"); 
         
-        		MongoClient client = new MongoClient("ds115749.mlab.com",15749);
-        		String connectPoint = client.getConnectPoint();
-        		System.out.println(connectPoint);
+        		MongoClient client = new MongoClient(uri);
+        		MongoDatabase db = client.getDatabase(uri.getDatabase());
         		
-        		 // Creating Credentials 
-        	      MongoCredential credential = MongoCredential.createCredential("admin", "blackjack", 
-        	         "adminadmin".toCharArray()); 
-        	      System.out.println("Connected to the database successfully"); 
+        		
+      
         	      
-        	      //Accessing the database 
-        	      MongoDatabase database = client.getDatabase("blackjack");  
-        	      System.out.println(database);
-        	      
-        	      
-        	      MongoCollection<Document> collection = database.getCollection("bokachod"); 
-        	      System.out.println("Collection :"+collection); 
+        	      //System.out.println(db.listCollectionNames());
+        	     db.createCollection("myCollection");
+        	    
+        	      /*
+        	      MongoCollection<Document> collection = db.getCollection("test"); 
+        	     
         	      
         	      Document document = new Document("title", "MongoDB").append("id", 1)
         	    	      .append("description", "database") 
@@ -37,10 +35,9 @@ public class Test {
         	    	      System.out.println("Document inserted successfully");
 
         	      
-        	     
+        	     */
         	      
-        	      client.close();
-        	
+        	      client.close();	
          
         
 	}
